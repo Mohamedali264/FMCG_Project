@@ -40,8 +40,8 @@ A comprehensive data analysis and visualization dashboard built with Dash and Pl
 
 1. Clone the repository:
 ```bash
-git clone [your-repository-url]
-cd [repository-name]
+git clone https://github.com/Mohamedali264/FMCG_Project.git
+cd FMCG_Project
 ```
 
 2. Create a virtual environment:
