@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* ---------- Theme Variables ---------- */
+:root {
+    --primary-color: #0466C8;
+    --secondary-color: #0353A4;
+    --background-color: #f8f9fa;
+    --text-color: #001845;
+    --card-background: #ffffff;
+    --input-background: #ffffff;
+    --border-color: #cccccc;
+    --spinner-color: #0466C8;
+}
+
+/* Dark Mode Variables */
+html[data-theme="dark"] {
+    --primary-color: #0466C8;
+    --secondary-color: #023E7D;
+    --background-color: linear-gradient(135deg, #0466C8, #001845);
+    --text-color: #f0f0f0;
+    --card-background: #003566;
+    --input-background: #012a4a;
+    --border-color: #2c2c2c;
+    --spinner-color: #0466C8;
+}
+
+/* ---------- Global Styles ---------- */
+html, body {
+    min-height: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Light Mode */
+html[data-theme="light"] body {
+    background: var(--background-color);
+}
+
+/* Dark Mode */
+html[data-theme="dark"] body {
+    background: linear-gradient(135deg, #0466C8, #001845);
+}
+
+/* Floating Background Icons */
+.floating-icon {
+    position: fixed;
+    z-index: 0;
+    opacity: 0.08;
+    animation: float 8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+#icon1 { top: 40%; left: 5%; width: 80px; animation-delay: 0s; }
+#icon2 { top: 50%; right: 10%; width: 100px; animation-delay: 2s; }
+#icon3 { bottom: 10%; left: 40%; width: 90px; animation-delay: 4s; }
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(0, 24, 69, 0.7) !important;
+    backdrop-filter: blur(10px);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Buttons */
+button, .btn {
+    border-radius: 10px !important;
+    padding: 10px 20px !important;
+    font-weight: 500;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover, .btn:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+/* Cards and Containers */
+.table-container, .graph-container, .card, .dash-table-container {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Upload Box */
+#upload-data {
+    border-radius: 10px;
+    border: 2px dashed var(--border-color) !important;
+    background-color: var(--input-background) !important;
+    color: var(--text-color);
+    transition: all 0.3s;
+}
+
+.Select-value-label, .Select-placeholder {
+    color: var(--text-color) !important;
+    font-weight: 600;
+}
+
+/* Dropdowns and Inputs */
+.Select-control, .form-control, .dash-dropdown, .dash-input {
+    background-color: var(--input-background);
+    color: var(--text-color);
+    border: 2px solid var(--border-color); /* خليتها 2px */
+    border-radius: 8px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    font-weight: 600; /* خليت النص أوضح */
+}
+
+/* Drop Shadow for Dropdown */
+.light-theme .Select-control,
+.dark-theme .Select-control {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Dropdown Options */
+.Select-menu-outer {
+    background-color: var(--input-background);
+    color: var(--text-color);
+    border-radius: 8px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.Select-option {
+    background-color: var(--input-background);
+    color: var(--text-color);
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.Select-option:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* Dropdown Special Fix for Selected Option */
+.dark-theme .Select-control {
+    background-color: #003566;
+    border: 2px solid #4ea8de;
+    color: #ffffff;
+}
+
+.dark-theme .Select-value-label {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.dark-theme .Select-option.is-selected {
+    background-color: #0466C8;
+    color: #ffffff;
+}
+
+.dark-theme .Select-option:hover {
+    background-color: #0353A4;
+    color: #ffffff;
+}
+
+.light-theme .Select-control {
+    background-color: #ffffff;
+    border: 2px solid #cccccc;
+    color: #001845;
+}
+
+.light-theme .Select-value-label {
+    color: #001845;
+    font-weight: 600;
+}
+
+.light-theme .Select-option.is-selected {
+    background-color: #0466C8;
+    color: #ffffff;
+}
+
+
+/* Loading Spinner */
+.dash-loading > div {
+    color: var(--spinner-color) !important;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;     /* ⬅ في الأسفل */
+    left: 20px;       /* ⬅ في اليسار */
+    z-index: 1000;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    border: none;
+    font-size: 22px;
+    padding: 10px 14px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: rotate(20deg) scale(1.1);
+}
+
+
+/* Smooth Transitions */
+.navbar, .card, .Select-control, .Select-option, .Select-menu-outer {
+    transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* =============================
+Chat Style - AI Assistant
+============================= */
+.chat-user-msg {
+    background-color: #0466C8;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    max-width: 70%;
+    margin-bottom: 10px;
+    margin-left: auto;
+    font-weight: 500;
+    text-align: left;
+}
+
+.chat-ai-label {
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+
