@@ -13,7 +13,7 @@ from flask import send_file
 from ydata_profiling import ProfileReport
 import pygwalker as pyg
 from xhtml2pdf import pisa
-from autoclean.autoclean import AutoClean
+from AutoClean.autoclean import AutoClean
 import time
 
 # Global cache
