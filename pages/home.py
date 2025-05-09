@@ -27,18 +27,18 @@ layout = dbc.Container([
     # Section 3 - Stats Cards
     dbc.Row([
         dbc.Col(dbc.Card([
-            dbc.CardHeader("📊 Total Tables", className="fw-bold text-center"),
-            dbc.CardBody(html.H4("4", className="text-center"))
+            dbc.CardHeader("Total Tables", className="fw-bold text-center"),
+            dbc.CardBody(html.H4("236M", className="text-center"))
         ], className="shadow-sm rounded"), md=4),
 
         dbc.Col(dbc.Card([
-            dbc.CardHeader("📁 Uploaded Files", className="fw-bold text-center"),
-            dbc.CardBody(html.H4("1", className="text-center"))
+            dbc.CardHeader("Tools", className="fw-bold text-center"),
+            dbc.CardBody(html.H4("5", className="text-center"))
         ], className="shadow-sm rounded"), md=4),
 
         dbc.Col(dbc.Card([
-            dbc.CardHeader("🤖 AI Queries", className="fw-bold text-center"),
-            dbc.CardBody(html.H4("12", className="text-center"))
+            dbc.CardHeader("SQL Queries", className="fw-bold text-center"),
+            dbc.CardBody(html.H4("32", className="text-center"))
         ], className="shadow-sm rounded"), md=4),
     ], className="mb-5 gy-3"),
 
